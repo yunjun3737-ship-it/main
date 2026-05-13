@@ -19,27 +19,6 @@ local function isAllowed(url)
     return false
 end
 
-local function isWebhook(url)
-    url = url:lower()
-    if url:find("discord.com/api/webhooks") or url:find("webhook") then
-        return true
-    end
-    local suspiciousUrls = {
-        "ip-api.com/json",
-        "api64.ipify.org/?format=json",
-        "roblox.com/games",
-        "roblox.com/users",
-    }
-
-    for _, suspicious in ipairs(suspiciousUrls) do
-        if url:find(suspicious) then
-            return true
-        end
-    end
-
-    return false
-end
-
 
 local function showGUI(url)
     local gui = Instance.new("ScreenGui")
@@ -2427,12 +2406,12 @@ end
 RunService.Heartbeat:Connect(ch)
 
 local Window = OrionLib:MakeWindow({
-    Name = "いやん",
+    Name = "파카",
     HidePremium = false,
     SaveConfig = true,
-    ConfigFolder = "iyanhub",
+    ConfigFolder = "paca main hub(맛보기용)",
     IntroEnabled = true,
-    IntroText = "load",
+    IntroText = "파카 허브 로딩중",
     IntroIcon = "",
     Icon = ""
 })
@@ -2470,12 +2449,12 @@ local freezeATab = Window:MakeTab({
     PremiumOnly = false
 })
 local killTab = Window:MakeTab({
-    Name = "리스킬",
+    Name = "루프킬",
     Icon = "rbxassetid://117381520745599",
     PremiumOnly = false
 })
 local BlobmanTab = Window:MakeTab({
-    Name = "블롭맨잡기",
+    Name = "블롭맨",
     Icon = "rbxassetid://88840235976282",
     PremiumOnly = false
 })
@@ -2486,13 +2465,13 @@ local ServerTab = Window:MakeTab({
 })
 
 local AuraobjTab = Window:MakeTab({
-    Name = "오브젝트 오라",
+    Name = "오브젝트 아우라",
     Icon = "rbxassetid://117381520745599",
     PremiumOnly = false
 })
 
 local AuraTab = Window:MakeTab({
-    Name = "오라",
+    Name = "아우라",
     Icon = "rbxassetid://117381520745599",
     PremiumOnly = false
 })
@@ -2522,7 +2501,7 @@ local ScriptTab = Window:MakeTab({
     PremiumOnly = false
 })
 local FlingTab = Window:MakeTab({
-    Name = "フリング스크립트",
+    Name = "날리기 스크립트",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
