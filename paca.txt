@@ -8590,3 +8590,15 @@ arasuTab:AddToggle({
 })
 
 OrionLib:Init()
+
+local OrionLib
+local success, err = pcall(function()
+    OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/jadpy/suki/refs/heads/main/orion", true))()
+end)
+
+if not success or not OrionLib then
+    warn("🚨 OrionLib 로드 실패! UI 없이 실행됩니다.")
+return
+end
+
+OrionLib:Init()
