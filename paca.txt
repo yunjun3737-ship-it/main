@@ -2411,7 +2411,7 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,
     ConfigFolder = "paca main hub(맛보기용)",
     IntroEnabled = true,
-    IntroText = "파카 허브 로딩중",
+    IntroText = "파카 허브 로딩중(메인의 극일부)",
     IntroIcon = "",
     Icon = ""
 })
@@ -2600,7 +2600,7 @@ ServerTab:AddToggle({
     end
 })
 ServerTab:AddSlider({
-    Name = "선택한 플레이어에게 맞추기、ライン量",
+    Name = "선택한 플레이어에게 맞추기、라인 양",
     Min = 1,
     Max = 100,
     Color = Color3.fromRGB(255, 255, 255),
@@ -2770,7 +2770,7 @@ local function teleportToPlayer2(playerName)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = playerName
 end
 SlotTab:AddButton({
-    Name = "プレイヤーに텔레포트",
+    Name = "플레이어에게 텔레포트",
     Callback = function()
         if selectedPlayer then
             teleportToPlayer(selectedPlayer)
@@ -2797,7 +2797,7 @@ ServerTab:AddButton({
     end
 })
 ServerTab:AddButton({
-    Name = "弱い렉 서버",
+    Name = "렉 서버",
     Callback = function()
         local startTime = tick()
         local isLooping = true
@@ -2857,7 +2857,7 @@ ServerTab:AddToggle({
     end
 })
 ServerTab:AddSlider({
-    Name = "크레이지 라인、ライン量",
+    Name = "크레이지 라인, 양",
     Min = 1,
     Max = 25,
     Color = Color3.fromRGB(255, 255, 255),
@@ -2889,7 +2889,7 @@ ServerTab:AddToggle({
     end
 })
 ServerTab:AddSlider({
-    Name = "렉 서버、ライン量",
+    Name = "렉 서버、양",
     Min = 50,
     Max = 5000,
     Color = Color3.fromRGB(255, 255, 255),
@@ -2939,7 +2939,7 @@ GrabTab:AddToggle({
 })
 
 GrabTab:AddSlider({
-    Name = "던지기強さ",
+    Name = "던지기파워",
     Min = 300,
     Max = 4000,
     ValueName = ".",
@@ -2952,14 +2952,14 @@ GrabTab:AddSlider({
     end
 })
 local UltraGrab = GrabTab:AddToggle({
-    Name = "라인 휘어짐 없음",
+    Name = "울트라 그랩",
     CurrentValue = false,
     Callback = function(Value)
         ultragrabbb = Value
     end
 })
 GrabTab:AddToggle({
-    Name = "毒잡기",
+    Name = "포이즌 그랩",
     Default = false,
     Save = false,
     Flag = "PoisonGrab",
@@ -3003,7 +3003,7 @@ GrabTab:AddToggle({
     end
 })
 GrabTab:AddToggle({
-    Name = "燃やす잡기",
+    Name = "파이어 그랩",
     Default = false,
     Save = false,
     Flag = "FireGrab",
@@ -3020,7 +3020,7 @@ GrabTab:AddToggle({
     end
 })
 GrabTab:AddToggle({
-    Name = "ノクリップ잡기",
+    Name = "노클립 그랩",
     Default = false,
     Save = false,
     Flag = "NoclipGrab",
@@ -3038,7 +3038,7 @@ GrabTab:AddToggle({
 })
 
 arasuTab:AddToggle({
-    Name = "전원 불태우기",
+    Name = "파이어 올",
     Default = false,
     Save = false,
     Callback = function(enabled)
@@ -3053,7 +3053,7 @@ arasuTab:AddToggle({
         end
     end
 })
-arasuTab:AddLabel("バナナを食べてからバナナを捨ててオンにして、バナナを、잡기")
+arasuTab:AddLabel("바나나를 먹고 나서 바나나를 버리고 켜고 바나나를(이건 내가생각해도 웃기노ㅋㅋ)")
 arasuTab:AddToggle({
     Name = "전체 래그돌",
     Default = false,
@@ -3151,7 +3151,7 @@ local BreakUFOsButton = arasuTab:AddButton({
 
 
 local BreakTrainButton = arasuTab:AddButton({
-    Name = "列車落とし",
+    Name = "열차 떨구기",
     Callback = function()
         if autoSpawnBlobman == true then
             if not newBlobman then
@@ -3190,7 +3190,7 @@ local BreakTrainButton = arasuTab:AddButton({
 
 
 arasuTab:AddButton({
-    Name = "デメリット高い트롤용",
+    Name = "트롤용",
     Callback = function()
        local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -3235,7 +3235,7 @@ end)
 })
 D_p = 0.000005
 DefenseTab:AddToggle({
-    Name = "안티잡기",
+    Name = "안티그랩",
     Default = false,
     Save = false,
     Flag = "antiGrab",
@@ -3277,7 +3277,7 @@ DefenseTab:AddToggle({
 blobmanInstanceS = nil
 
 local autoGucciToggle = DefenseTab:AddToggle({
-    Name = "안티잡기　V２",
+    Name = "안티그랩　V２",
     CurrentValue = false,
     Callback = function(Value)
         autoGucciT = Value
@@ -3345,7 +3345,7 @@ end
 
 local antikickKCoroutine
 DefenseTab:AddToggle({
-    Name = "안티キック解除",
+    Name = "안티킥 해제,
     Default = false,
     Callback = function(enabled)
         if enabled then
@@ -3565,7 +3565,7 @@ function loopdrop()
 end
 
 DefenseTab:AddToggle({
-	Name = "안티ブリングtest",
+	Name = "안티브링TEST",
 	Default = false,
 	Callback = function(value)
 		blobLoopT2 = value
@@ -3581,7 +3581,7 @@ DefenseTab:AddToggle({
 })
 
 DefenseTab:AddToggle({
-    Name = "ラグドール起こし",
+    Name = "래그돌",
     CurrentValue = false,
     Flag = "Ragdoll",
     Callback = function(Value)
@@ -3661,7 +3661,7 @@ local function setProtection(state)
 end
 
 DefenseTab:AddToggle({
-    Name = "안티ラグドールテスト",
+    Name = "안티래그돌 테스트",
     Default = false,
     Callback = function(Value)
         setProtection(Value)
@@ -3711,7 +3711,7 @@ local function RagdollKill(blobman)
 end
 
 DefenseTab:AddButton({
-    Name = "てすと",
+    Name = "섹스",
     Callback = function()
 
         if not newBlobman then
@@ -3736,7 +3736,7 @@ DefenseTab:AddButton({
 
 
 DefenseTab:AddToggle({
-    Name = "奈落",
+    Name = "안티보이드",
     Default = false,
     Callback = function(Value)
         local antivoid = Value
@@ -3749,7 +3749,7 @@ DefenseTab:AddToggle({
 })
 
 local AntiBurn = DefenseTab:AddToggle({
-    Name = "안티ファイヤ",
+    Name = "불에 안타요~",
     CurrentValue = false,
     Flag = "AntiBurn",
     Callback = function(Value)
@@ -3786,7 +3786,7 @@ local AntiBurn = DefenseTab:AddToggle({
 
 
 DefenseTab:AddToggle({
-    Name = "안티爆発",
+    Name = "안티폭탄",
     Default = false,
     Save = false,
     Flag = "AntiExplosion",
@@ -3817,7 +3817,7 @@ DefenseTab:AddToggle({
 local FF2 = nil
 local FF3 = "FireExtinguisher"
 DefenseTab:AddToggle({
-    Name = "안티ファイヤall",
+    Name = "안티파이어all",
     Default = false,
     Save = true,
     Callback = function(enabled)
@@ -3888,7 +3888,7 @@ function antiLagF()
 end
 
 DefenseTab:AddToggle({
-    Name = "안티ラグ",
+    Name = "안티렉",
     Default = false,
     Callback = function(Value)
         antiLagT = Value
@@ -3896,7 +3896,7 @@ DefenseTab:AddToggle({
     end
 })
 local AntiKick = DefenseTab:AddToggle({
-    Name = "안티キック",
+    Name = "안티킥",
     CurrentValue = false,
     Flag = "AntiKick",
     Callback = function(Value)
@@ -3972,7 +3972,7 @@ local AntiKick = DefenseTab:AddToggle({
 })
 
 DefenseTab:AddButton({
-    Name = " 안티リスキル",
+    Name = " 안티루프킬",
     Callback = function()
         local Players = game:GetService("Players")
         local RunService = game:GetService("RunService")
@@ -3997,7 +3997,7 @@ DefenseTab:AddButton({
 })
 
 DefenseTab:AddButton({
-    Name = " 안티雪玉",
+    Name = " 토이 노클립",
     Callback = function()
         local replicatedStorage = game:GetService("ReplicatedStorage")
         local bombEvents = replicatedStorage:FindFirstChild("BombEvents")
@@ -4155,7 +4155,7 @@ end
 
 aaaa = 20
 DefenseTab:AddToggle({
-    Name = "안티雪玉V2",
+    Name = "안티V2",
     Default = false,
     Save = true,
     Callback = function(enabled)
@@ -4232,7 +4232,7 @@ DefenseTab:AddToggle({
 })
 
 DefenseTab:AddButton({
-    Name = " 直接突破無効,雪玉 ",
+    Name = " 직접적인 돌파는 소용없",
     Callback = function()
         local Players = game:GetService("Players")
         local Workspace = game:GetService("Workspace")
@@ -4292,7 +4292,7 @@ DefenseTab:AddButton({
 })
 
 DefenseTab:AddToggle({
-    Name = "Bring軽減",
+    Name = "Bring낮추기",
     Default = false,
     Callback = function(state)
         toggleBringEnabled = state
@@ -4304,7 +4304,7 @@ DefenseTab:AddToggle({
     end
 })
 DefenseTab:AddSlider({
-    Name = "Bring軽減座標",
+    Name = "Bring좌표",
     Min = -34000000,
     Max = 34000000,
     Color = Color3.fromRGB(255, 255, 255),
@@ -4317,7 +4317,7 @@ DefenseTab:AddSlider({
 })
 
 DefenseTab:AddToggle({
-    Name = "掴んだやつを飛ばす",
+    Name = "셀프킥",
     Default = false,
     Save = false,
     Flag = "SelfDefenseKick",
@@ -4400,7 +4400,7 @@ DefenseTab:AddToggle({
 
 local blobmanCoroutine = nil
 local blobman = nil
-local ude = "両手"
+local ude = "양손"
 local function blobGrabtarget(player, blobman)
     if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
         if ude == "両手" or ude == "左手" then
@@ -4433,7 +4433,7 @@ for _, player in ipairs(Players:GetPlayers()) do
     nameMap[display] = player.Name
 end
 local playerDropdown = BlobmanTab:AddDropdown({
-    Name = "Bringしたい플레이어 선택",
+    Name = "Bring플레이어 선택",
     Options = playerNames,
     Callback = function(selectedDisplay)
         local realName = nameMap[selectedDisplay]
@@ -4521,7 +4521,7 @@ local function LoopGrabTargetPlayer()
 end
 
 BlobmanTab:AddToggle({
-	Name = "選択したプレイヤーをbling",
+	Name = "선택한 플레이어를bling",
 	Default = false,
 	Callback = function(enabled)
 		isGrabLoopActive = enabled
@@ -4536,7 +4536,7 @@ BlobmanTab:AddToggle({
 
 local blobman1
 blobman1 = BlobmanTab:AddToggle({
-    Name = "キックオール",
+    Name = "킥 올",
     Default = false,
     Callback = function(enabled)
         if enabled then
@@ -4614,7 +4614,7 @@ blobman1 = BlobmanTab:AddToggle({
 })
 
 BlobmanTab:AddSlider({
-    Name = "オールの速度",
+    Name = "속도",
     Min = 0,
     Max = 1,
     Color = Color3.fromRGB(255, 255, 255),
@@ -4629,7 +4629,7 @@ BlobmanTab:AddSlider({
 --[[
 local blobman1
 blobman1 = BlobmanTab:AddToggle({
-    Name = "滑るオール",
+    Name = "미끌;;",
     Default = false,
     Callback = function(enabled)
         if enabled then
@@ -4793,7 +4793,7 @@ end
 
 
 BlobmanTab:AddToggle({
-	Name = "高速all",
+	Name = "뤂all",
 	Default = false,
 	Callback = function(value)
 		blobLoopT2 = value
@@ -4805,7 +4805,7 @@ BlobmanTab:AddToggle({
 
 
 BlobmanTab:AddSlider({
-    Name = "高速allの速度",
+    Name = "속도",
     Min = 0,
     Max = 1,
     Color = Color3.fromRGB(255, 255, 255),
@@ -4819,7 +4819,7 @@ BlobmanTab:AddSlider({
 
 
 BlobmanTab:AddDropdown({
-    Name = "オールのモード",
+    Name = "전체",
     Default = "両手",
     Options = {"左手", "両手", "右手"},
     Callback = function(selected)
@@ -4840,7 +4840,7 @@ local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 local selectedPlayer = nil
 local whitelistDropdown = BlobmanTab:AddDropdown({
-    Name = "ホワリスに入れたいプレイヤーを選ぶ",
+    Name = "Whalis에 넣고 싶은 플레이어를 선택하세요.",
     Options = {},
     Callback = function(player)
         if player then
@@ -4849,7 +4849,7 @@ local whitelistDropdown = BlobmanTab:AddDropdown({
     end
 })
 local whitelistedDropdown = BlobmanTab:AddDropdown({
-    Name = "ホワリスに入ってるプレイヤー",
+    Name = "Whallis에 들어간 플레이어",
     Options = {},
     Callback = function(player)
         if player then
@@ -4885,7 +4885,7 @@ end)
 updatePlayerDropdown()
 updateWhitelistDropdown()
 BlobmanTab:AddButton({
-    Name = "ホワリスに追加",
+    Name = "친구 추가",
     Callback = function()
         if selectedPlayer then
             _G.WhitelistedPlayers[selectedPlayer] = true
@@ -4899,7 +4899,7 @@ BlobmanTab:AddButton({
     end
 })
 BlobmanTab:AddButton({
-    Name = "ホワリス削除",
+    Name = "화이트 리스트 삭제",
     Callback = function()
         if selectedPlayer then
             _G.WhitelistedPlayers[selectedPlayer] = nil
@@ -4910,7 +4910,7 @@ BlobmanTab:AddButton({
     end
 })
 BlobmanTab:AddToggle({
-    Name = "ホワイトフレンド",
+    Name = "화이트프렌드",
     Default = _G.friendModeEnabled,
     Callback = function(state)
         _G.friendModeEnabled = state
@@ -4919,7 +4919,7 @@ BlobmanTab:AddToggle({
 })
 
 BlobmanTab:AddToggle({
-    Name = "自動お座り",
+    Name = "자동 앉기[블롭]",
     Default = false,
     Callback = function(enabled)
         autoMountBlobman(enabled)
@@ -4941,7 +4941,7 @@ function findBlobman()
 end
 
 BlobmanTab:AddButton({
-    Name = "座標",
+    Name = "좌표",
     Callback = function()
         local blobman = findBlobman()
         if blobman then
@@ -4960,7 +4960,7 @@ BlobmanTab:AddButton({
     end
 })
 BlobmanTab:AddSlider({
-    Name = "座標",
+    Name = "좌표",
     Min = -90000000,
     Max = 90000000,
     Color = Color3.fromRGB(255, 255, 255),
@@ -4973,7 +4973,7 @@ BlobmanTab:AddSlider({
 })
 
 BlobmanTab:AddButton({
-    Name = "38桁座標いもり",
+    Name = "자릿수 좌표",
     Callback = function()
         local function findBlobman()
             player = game.Players.LocalPlayer
@@ -5015,7 +5015,7 @@ BlobmanTab:AddButton({
     end
 })
 BlobmanTab:AddButton({
-    Name = "準突破無効",
+    Name = "블롭찾기",
     Callback = function()
         function findBlobman()
             playe = game.Players.LocalPlayer
@@ -5051,7 +5051,7 @@ BlobmanTab:AddButton({
 })
 
 AuraTab:AddSlider({
-    Name = "半径",
+    Name = "아우라크기",
     Min = 0,
     Max = 25,
     Color = Color3.fromRGB(255, 255, 255),
@@ -5066,7 +5066,7 @@ AuraTab:AddSlider({
 local runningAura = false
 
 AuraTab:AddToggle({
-    Name = "잡기오라",
+    Name = "플링 아우라",
     Default = false,
     Save = false,
     Flag = "FlingAura",
@@ -5108,7 +5108,7 @@ AuraTab:AddToggle({
 })
 
 AuraTab:AddToggle({
-    Name = "上に上がる오라",
+    Name = "스카이 아우라",
     Default = false,
     Save = false,
     Flag = "skyAura",
@@ -5152,7 +5152,7 @@ AuraTab:AddToggle({
 })
 
 AuraTab:AddToggle({
-    Name = "フリング오라",
+    Name = "필링 아우라",
     Default = false,
     Save = false,
     Flag = "FlingAura",
@@ -5197,7 +5197,7 @@ AuraTab:AddToggle({
 
 
 AuraTab:AddToggle({
-    Name = "フリーズ오라",
+    Name = "프리즌 아우라",
     Default = false,
     Save = false,
     Flag = "FreezeAura",
@@ -5243,7 +5243,7 @@ AuraTab:AddToggle({
 
 
 AuraTab:AddToggle({
-    Name = "スピン오라",
+    Name = "스핀 아우라",
     Default = false,
     Save = false,
     Flag = "SpinAura",
@@ -5288,7 +5288,7 @@ AuraTab:AddToggle({
 })
 
 AuraTab:AddToggle({
-    Name = "毒오라",
+    Name = "독 아우라",
     Default = false,
     Save = false,
     Callback = function(enabled)
@@ -5339,7 +5339,7 @@ AuraTab:AddToggle({
 })
 
 AuraTab:AddToggle({
-    Name = "radioactive오라",
+    Name = "radioactive아우라",
     Default = false,
     Save = false,
     Callback = function(enabled)
@@ -5390,7 +5390,7 @@ AuraTab:AddToggle({
 })
 
 AuraTab:AddToggle({
-    Name = "相手が埋まる",
+    Name = "네쿠 그랩",
     Default = false,
     Save = false,
     Flag = "narakuGrab",
@@ -5474,7 +5474,7 @@ AuraTab:AddToggle({
 })
 
 AuraTab:AddToggle({
-    Name = "ホワイトフレンド",
+    Name = "화이트프렌드",
     Default = false,
     Callback = function(Value)
         _G.Aurahowait = Value
@@ -5482,7 +5482,7 @@ AuraTab:AddToggle({
 })
 
 CharacterTab:AddSlider({
-    Name = "FPS上限解放",
+    Name = "FPS최대치",
     Min = 2,
     Max = 2000,
     Default = 300,
@@ -5494,7 +5494,7 @@ CharacterTab:AddSlider({
     end
 })
 CharacterTab:AddButton({
-    Name = "三人称",
+    Name = "3인칭",
     Callback = function()
         game.Players.LocalPlayer.CameraMaxZoomDistance = 8000000
         game.Players.LocalPlayer.CameraMode = "Classic"
@@ -5516,7 +5516,7 @@ CharacterTab:AddSlider({
 
 local asss = false
 CharacterTab:AddToggle({
-    Name = "캐릭터の移動",
+    Name = "캐릭터이동",
     Default = false,
     Callback = function(Value)
         asss = Value
@@ -5536,7 +5536,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
 end)
 
 CharacterTab:AddSlider({
-    Name = "캐릭터のスピード",
+    Name = "캐릭터의 속도",
     Min = 0,
     Max = 200,
     Color = Color3.fromRGB(255, 255, 255),
@@ -5555,7 +5555,7 @@ local N = {
 }
 local O = game.Players.LocalPlayer
 local JumpPowerToggle = CharacterTab:AddToggle({
-    Name = "ジャンプ",
+    Name = "점프",
     CurrentValue = false,
     Flag = "JumpPowerToggle",
     Callback = function(Value)
@@ -5573,7 +5573,7 @@ local JumpPowerToggle = CharacterTab:AddToggle({
 })
 
 CharacterTab:AddSlider({
-    Name = "ジャンプの高さ",
+    Name = "점프 높이",
     Min = 0,
     Max = 1000,
     Color = Color3.fromRGB(255, 255, 255),
@@ -5590,7 +5590,7 @@ CharacterTab:AddSlider({
     end
 })
 CharacterTab:AddSlider({
-    Name = "캐릭터の高さ",
+    Name = "캐릭터높이",
     Min = -50,
     Max = 20,
     Color = Color3.fromRGB(255, 255, 255),
@@ -5606,7 +5606,7 @@ CharacterTab:AddSlider({
 
 InfiniteJumpEnabled = false
 CharacterTab:AddToggle({
-    Name = "無限ジャンプ",
+    Name = "무한점프",
     Default = false,
     Callback = function(value)
         InfiniteJumpEnabled = value
@@ -5622,7 +5622,7 @@ UserInputService.JumpRequest:Connect(function()
     end
 end)
 ScriptTab:AddButton({
-    Name = "無敵",
+    Name = "무적",
     Callback = function()
         local Players = game:GetService("Players")
         local LocalPlayer = Players.LocalPlayer
@@ -5645,7 +5645,7 @@ ScriptTab:AddButton({
         local button = Instance.new("TextButton")
         button.Name = "AnchorButton"
         button.Size = UDim2.new(0, 50, 0, 50)
-        button.Text = "無敵OFF"
+        button.Text = "무적OFF"
         button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         button.Font = Enum.Font.SourceSansBold
         button.TextSize = 14
@@ -5669,10 +5669,10 @@ ScriptTab:AddButton({
             isAnchored = not isAnchored
             setAnchored(character, isAnchored)
             if isAnchored then
-                button.Text = "無敵 ON"
+                button.Text = "무적 ON"
                 button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
             else
-                button.Text = "無敵 OFF"
+                button.Text = "무적 OFF"
                 button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
             end
         end)
@@ -5700,7 +5700,7 @@ ScriptTab:AddButton({
     end
 })
 ScriptTab:AddButton({
-    Name = "블롭맨無効",
+    Name = "블롭맨무효",
     Callback = function()
         local Players = game:GetService("Players")
         local player = Players.LocalPlayer
@@ -5718,7 +5718,7 @@ ScriptTab:AddButton({
         local button = Instance.new("TextButton")
         button.Size = UDim2.new(0.8, 0, 0.5, 0)
         button.Position = UDim2.new(0.1, 0, 0.25, 0)
-        button.Text = "블롭맨無効"
+        button.Text = "블롭맨삭제"
         button.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
         button.TextColor3 = Color3.fromRGB(255, 255, 255)
         button.Parent = frame
@@ -5803,7 +5803,7 @@ ScriptTab:AddButton({
     end
 })
 ScriptTab:AddButton({
-    Name = "座標v2",
+    Name = "좌표v2",
     Callback = function()
         local Players = game:GetService("Players")
         local RunService = game:GetService("RunService")
@@ -5855,7 +5855,7 @@ ScriptTab:AddButton({
                     playerLabels[player].Text = string.format("%s: X: %.1f, Y: %.1f, Z: %.1f", player.Name, position.X,
                         position.Y, position.Z)
                 else
-                    playerLabels[player].Text = player.Name .. ": プレイヤーが死んだ"
+                    playerLabels[player].Text = player.Name .. ": 플레이어 사망"
                 end
             end
             updateCanvasSize()
@@ -5956,7 +5956,7 @@ ScriptTab:AddButton({
         titleLabel.Size = UDim2.new(1, -20, 0, 20)
         titleLabel.Position = UDim2.new(0, 10, 0, -24)
         titleLabel.BackgroundTransparency = 1
-        titleLabel.Text = "100均のFovチェンジャー😃"
+        titleLabel.Text = "백진화 그립다ㅠㅠㅠ"
         titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
         titleLabel.Font = Enum.Font.GothamBold
         titleLabel.TextScaled = true
@@ -5991,7 +5991,7 @@ ScriptTab:AddButton({
         resetButton.Size = UDim2.new(0, 100, 0, 24)
         resetButton.Position = UDim2.new(1, -135, 0, 40)
         resetButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-        resetButton.Text = "視野角を戻す"
+        resetButton.Text = "시야각 원래대로"
         resetButton.Font = Enum.Font.SourceSans
         resetButton.TextColor3 = Color3.new(1, 1, 1)
         resetButton.TextScaled = true
@@ -6097,7 +6097,7 @@ ScriptTab:AddButton({
 })
 
 ScriptTab:AddButton({
-    Name = "텔레포트스크립트v1 (cheeky)",
+    Name = "텔레포트 스크립트v1 (cheeky)",
     Callback = function()
         local player = game.Players.LocalPlayer
         local UIS = game:GetService("UserInputService")
@@ -6146,7 +6146,7 @@ ScriptTab:AddButton({
 })
 
 ScriptTab:AddButton({
-    Name = "텔레포트스크립트v2 (はろ)",
+    Name = "텔레포트스크립트v2 (섹스)",
     Callback = function()
         repeat
             wait()
@@ -6168,7 +6168,7 @@ ScriptTab:AddButton({
         f.Visible = false
         local t = Instance.new("TextLabel", f)
         t.Size = UDim2.new(1, 0, 0, 30)
-        t.Text = "텔레포트先を選択"
+        t.Text = "텔레포트"
         t.TextColor3 = Color3.fromRGB(255, 255, 255)
         t.BackgroundTransparency = 1
         t.TextSize = 20
@@ -6234,7 +6234,7 @@ ScriptTab:AddButton({
         local st = Instance.new("TextButton", f)
         st.Size = UDim2.new(0, 280, 0, 30)
         st.Position = UDim2.new(0, 10, 0, 230)
-        st.Text = "連続텔레포트停止"
+        st.Text = "아무스크"
         st.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         st.TextColor3 = Color3.fromRGB(255, 255, 255)
         st.MouseButton1Click:Connect(function()
@@ -6244,7 +6244,7 @@ ScriptTab:AddButton({
         local ra = Instance.new("TextButton", f)
         ra.Size = UDim2.new(0, 280, 0, 30)
         ra.Position = UDim2.new(0, 10, 0, 270)
-        ra.Text = "ランダム高速텔레포트切替"
+        ra.Text = "랜덤 고속텔레포트"
         ra.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
         ra.TextColor3 = Color3.fromRGB(255, 255, 255)
         ra.MouseButton1Click:Connect(function()
@@ -6255,18 +6255,18 @@ ScriptTab:AddButton({
         local afb = Instance.new("TextButton", f)
         afb.Size = UDim2.new(0, 280, 0, 30)
         afb.Position = UDim2.new(0, 10, 0, 310)
-        afb.Text = "안티フリング：ON"
+        afb.Text = "안티플링：ON"
         afb.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
         afb.TextColor3 = Color3.fromRGB(255, 255, 255)
         afb.MouseButton1Click:Connect(function()
             afe = not afe
-            afb.Text = "안티フリング：" .. (afe and "ON" or "OFF")
+            afb.Text = "안티플링：" .. (afe and "ON" or "OFF")
         end)
         for i, c in ipairs(co) do
             local b = Instance.new("TextButton", f)
             b.Size = UDim2.new(0, 280, 0, 30)
             b.Position = UDim2.new(0, 10, 0, 30 + (i - 1) * 40)
-            b.Text = string.format("座標%d: X=%.2f Y=%.2f Z=%.2f", i, c.X, c.Y, c.Z)
+            b.Text = string.format("좌표%d: X=%.2f Y=%.2f Z=%.2f", i, c.X, c.Y, c.Z)
             b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             b.TextColor3 = Color3.fromRGB(0, 0, 0)
             b.MouseButton1Click:Connect(function()
@@ -6306,7 +6306,7 @@ ScriptTab:AddButton({
 })
 
 ScriptTab:AddButton({
-    Name = "えりしうむ",
+    Name = "에리시움",
     Callback = function()
         loadstring(game:HttpGet(
             "https://raw.githubusercontent.com/VerbalHubz/Verbal-Hub/refs/heads/main/ElysiumKeySystemCracked", true))()
@@ -6314,7 +6314,7 @@ ScriptTab:AddButton({
 })
 
 ScriptTab:AddButton({
-    Name = "Ghostハブ",
+    Name = "Ghost",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub"))()
     end
@@ -6326,7 +6326,7 @@ ScriptTab:AddButton({
     end
 })
 ScriptTab:AddButton({
-    Name = "奈落",
+    Name = "스키",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/jadpy/suki/refs/heads/main/lol"))()
     end
@@ -6339,7 +6339,7 @@ ScriptTab:AddButton({
     end
 })
 ScriptTab:AddButton({
-    Name = "座標分かる",
+    Name = "좌표 알?",
     Callback = function()
         local S = Instance.new("ScreenGui")
         local L = Instance.new("Frame")
@@ -6468,7 +6468,7 @@ ScriptTab:AddButton({
     end
 })
 SlotTab:AddToggle({
-    Name = "オート텔레포트家",
+    Name = "오토텔레포트 집",
     Default = false,
     Callback = function(value)
         autoTeleportOnFall = value
@@ -6484,13 +6484,13 @@ game:GetService("RunService").Heartbeat:Connect(function()
 end)
 game.Workspace.Gravity = 100
 CharacterTab:AddSlider({
-    Name = "重力スライド式",
+    Name = "중력 슬라이드식(노무현 빙의)",
     Min = 0,
     Max = 1000,
     Default = 100,
     Color = Color3.fromRGB(255, 255, 255),
     Increment = 1,
-    ValueName = "重力",
+    ValueName = "운지 속도",
     Callback = function(Value)
         game.Workspace.Gravity = Value
     end
@@ -6542,7 +6542,7 @@ local function toggleGrab(flag, mode)
     end
 end
 GrabTab:AddToggle({
-    Name = "キル잡기",
+    Name = "킬그랩",
     Default = false,
     Save = false,
     Flag = "KillGrab",
@@ -6552,7 +6552,7 @@ GrabTab:AddToggle({
     end
 })
 GrabTab:AddToggle({
-    Name = "上に上がる잡기",
+    Name = "스카이그랩",
     Default = false,
     Save = false,
     Flag = "SkyGrab",
@@ -6562,7 +6562,7 @@ GrabTab:AddToggle({
     end
 })
 GrabTab:AddToggle({
-    Name = "下に下がる잡기",
+    Name = "지하그랩(국정원)",
     Default = false,
     Save = false,
     Flag = "DownGrab",
@@ -6572,7 +6572,7 @@ GrabTab:AddToggle({
     end
 })
 GrabTab:AddToggle({
-    Name = "高さを保ちながら잡기",
+    Name = "스태블그랩",
     Default = false,
     Save = false,
     Flag = "StableGrab",
@@ -6582,7 +6582,7 @@ GrabTab:AddToggle({
     end
 })
 SlotTab:AddButton({
-    Name = "座標",
+    Name = "좌표",
     Callback = function()
         for _, part in pairs(game:GetService("Workspace"):GetDescendants()) do
             if game.Players.LocalPlayer.Character:FindFirstChild("Head") and
@@ -6607,7 +6607,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddSlider({
-    Name = "座標",
+    Name = "좌표",
     Min = -60000000,
     Max = 60000000,
     Color = Color3.fromRGB(255, 255, 255),
@@ -6622,7 +6622,7 @@ SlotTab:AddSlider({
 })
 
 SlotTab:AddButton({
-    Name = "紫の家",
+    Name = "보라집",
     Callback = function()
         local me = game.Players.LocalPlayer
         local murasaki = Vector3.new(255, -8, 449)
@@ -6632,7 +6632,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "緑の家",
+    Name = "초록집",
     Callback = function()
         local me = game.Players.LocalPlayer
         local midori = Vector3.new(-534, -8, 93)
@@ -6642,7 +6642,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "青の家",
+    Name = "파란집",
     Callback = function()
         local me = game.Players.LocalPlayer
         local ao = Vector3.new(512, 82, -343)
@@ -6652,7 +6652,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "オレンジ？の家",
+    Name = "오렌지..?집",
     Callback = function()
         local me = game.Players.LocalPlayer
         local orennzi = Vector3.new(548, 122, -73)
@@ -6663,7 +6663,7 @@ SlotTab:AddButton({
 })
 
 SlotTab:AddButton({
-    Name = "赤の家",
+    Name = "빨간집",
     Callback = function()
           local me = game.Players.LocalPlayer
         local aka = Vector3.new(-493, -8, -165)
@@ -6673,7 +6673,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "リス地",
+    Name = "마녀집"
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(0, -7, 0)
@@ -6683,7 +6683,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "山の緑の家",
+    Name = "초록집(산)",
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(-278, 147, 310)
@@ -6693,7 +6693,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "赤い畑の家",
+    Name = "목장",
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(-203, 84, -292)
@@ -6703,7 +6703,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "普通の洞窟",
+    Name = "일반 동굴",
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(-261, -7, 533)
@@ -6713,7 +6713,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "スロットの裏の洞窟",
+    Name = "슬롯 뒤의 동굴",
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(-34, -7, -299)
@@ -6723,7 +6723,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "毒井戸",
+    Name = "독 우물",
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(106, -25, 279)
@@ -6733,7 +6733,7 @@ SlotTab:AddButton({
     end
 })
 SlotTab:AddButton({
-    Name = "雪山",
+    Name = "설산",
     Callback = function()
         local player = game.Players.LocalPlayer
         local targetPosition = Vector3.new(-414, 231, 480)
@@ -6783,40 +6783,40 @@ SlotTab:AddButton({
     end
 })
 FlingTab:AddButton({
-    Name = "フリング스크립트",
+    Name = "스키스크립트",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jadpy/suki/refs/heads/main/fling%20script"))()
     end
 })
 GTab:AddButton({
-    Name = "ディスコード링크",
+    Name = "링크(합작한 사람디코)",
     Callback = function()
         setclipboard("https://discord.gg/YqmhW4Se8B")
         toclipboard("https://discord.gg/YqmhW4Se8B")
     end
 })
-HomeTab:AddParagraph("ユーザーname", game.Players.LocalPlayer.Name)
-HomeTab:AddParagraph("表示の名前", game.Players.LocalPlayer.DisplayName)
-HomeTab:AddParagraph("ユーザーid ", tostring(game.Players.LocalPlayer.UserId))
-HomeTab:AddParagraph("アカウントの時間", tostring(game.Players.LocalPlayer.AccountAge))
-HomeTab:AddParagraph("ゲームの名前", gameName)
-HomeTab:AddParagraph("ゲームid", tostring(game.PlaceId))
-HomeTab:AddParagraph("最大人数", tostring(game.Players.MaxPlayers))
-PATab:AddLabel("これはまだテストです。追加済み")
-PATab:AddLabel("안티ウエブフック追加。いやんはぶ起動時に自動で起動")
-PATab:AddLabel("안티ウエブフック内容")
-PATab:AddLabel("ウエブフックの정보を送信するのを防ぐ")
-PATab:AddLabel("ウエブフック逆探知。ウエブフックの링크コピーをコピーする")
+HomeTab:AddParagraph("사용자이름", game.Players.LocalPlayer.Name)
+HomeTab:AddParagraph("표시 이름", game.Players.LocalPlayer.DisplayName)
+HomeTab:AddParagraph("유저id ", tostring(game.Players.LocalPlayer.UserId))
+HomeTab:AddParagraph("계정 시간", tostring(game.Players.LocalPlayer.AccountAge))
+HomeTab:AddParagraph("게임 이름", gameName)
+HomeTab:AddParagraph("게임id", tostring(game.PlaceId))
+HomeTab:AddParagraph("최대 인원", tostring(game.Players.MaxPlayers))
+PATab:AddLabel("이건 아직 테스트입니다.")
+PATab:AddLabel("안티웹훅")
+PATab:AddLabel("안티웹훅2")
+PATab:AddLabel("보안")
+PATab:AddLabel("링크 역탐지")
 
-iyanTab:AddLabel("いやんはぶのグループ")
+iyanTab:AddLabel("이야하부 그룹")
 iyanTab:AddLabel("id : gegdgmvs35..表示名suu")
 iyanTab:AddLabel("id : Hello838338383")
 iyanTab:AddLabel("id : MidoriMiroru_73816")
 iyanTab:AddLabel("id : ftapplayer_LOL")
-arasuTab:AddLabel("うんこは自分でお願いします…")
+arasuTab:AddLabel("똥은 직접 싸주세요…")
 arasuTab:AddLabel("食べたらオンにしてゲロかけてください")
 arasuTab:AddToggle({
-    Name = "ゲロかけALL",
+    Name = "ALL",
     Default = false,
     Callback = function(value)
         bringingEnabled = value
@@ -6853,7 +6853,7 @@ arasuTab:AddToggle({
 })
 
 arasuTab:AddToggle({
-    Name = "ホワイトフレンド",
+    Name = "화이트프렌드",
     Default = false,
     Callback = function(state)
         _G.furend = state
@@ -6887,7 +6887,7 @@ local function RefreshList()
 end
 
 PlayerDropdown = freezeATab:AddDropdown({
-    Name = "どこでも突破するプレイヤーを選ぶ",
+    Name = "사람고르기",
     Options = playerNames,
     Callback = function(selectedDisplay)
         SelectedPlayer = nameMap[selectedDisplay]
@@ -6934,7 +6934,7 @@ function infiniteLoop()
     end
 end
 freezeATab:AddToggle({
-    Name = "どこでも突破",
+    Name = "어디든 ㄱㄴ",
     Default = false,
     Callback = function(toggleState)
 
@@ -6973,7 +6973,7 @@ freezeATab:AddToggle({
 
 
 freezeATab:AddButton({
-    Name = "リスト更新",
+    Name = "목록 업데이트",
     Callback = RefreshList
 })
 RefreshList()
@@ -7075,7 +7075,7 @@ end
 update1()
 
 local playerDropdown = freezeATab:AddDropdown({
-    Name = "무적 뚫기したい플레이어 선택",
+    Name = "무적 뚫기 플레이어 선택",
     Options = playerNames,
     Default = nil,
     Callback = function(selectedDisplay)
@@ -7265,7 +7265,7 @@ freezeATab:AddToggle({
 
 objectOptions = {"BallSnowball"}
 freezeATab:AddDropdown({
-    Name = "当てるオブジェクトを選ぶ",
+    Name = "스노우볼 존나 테러",
     Options = objectOptions,
     Default = "BallSnowball",
     Callback = function(selectedObject)
@@ -7277,7 +7277,7 @@ local runningCoroutine = nil
 local Clipon = false
 
 CharacterTab:AddToggle({
-    Name = "ノクリップ",
+    Name = "노클립",
     Default = false,
     Callback = function(value)
         Clipon = value
@@ -7476,10 +7476,10 @@ function toggleAnchored(toggled)
     anchorParts(creature4)
 end
 
-CharacterTab:AddLabel("블롭맨のスピード。高さ、ノクリップを決めれます")
+CharacterTab:AddLabel("블롭맨속도. 높이, 노클립을 결정할 수 있습니다.")
 
 CharacterTab:AddToggle({
-    Name = "블롭맨、アンカー",
+    Name = "블롭맨、앵커",
     Default = false,
     Callback = function(blobanchor)
         if blobanchor then
@@ -7494,7 +7494,7 @@ noClipCoroutine = nil
 noClipEnabled = false
 
 CharacterTab:AddToggle({
-    Name = "블롭맨、ノクリップ",
+    Name = "블롭맨、노클립",
     Default = false,
     Callback = function(aiueo)
         if aiueo then
@@ -7525,7 +7525,7 @@ originalWalkSpeed = nil
 findHumanoidCoroutine = nil
 findHumanoidEnabled = false
 CharacterTab:AddToggle({
-    Name = "블롭맨、スピード、高さ",
+    Name = "블롭맨、속도, 높이",
     Default = false,
     Callback = function(aiueo)
         if aiueo then
@@ -7570,7 +7570,7 @@ CharacterTab:AddToggle({
 })
 
 CharacterTab:AddSlider({
-    Name = "블롭맨の高さ",
+    Name = "블롭맨 높이",
     Min = -500,
     Max = 500,
     Color = Color3.fromRGB(255, 255, 255),
@@ -7585,7 +7585,7 @@ CharacterTab:AddSlider({
 })
 
 CharacterTab:AddSlider({
-    Name = "블롭맨のスピード",
+    Name = "블롭맨의 속도",
     Min = 0,
     Max = 300,
     Color = Color3.fromRGB(255, 255, 255),
@@ -7633,7 +7633,7 @@ for _, player in ipairs(Players:GetPlayers()) do
 end
 
 local playerDropdown = ESPTab:AddDropdown({
-    Name = "視点を見たい플레이어 선택",
+    Name = "염탐할 플레이어 선택(박원순 마인드)",
     Options = playerNames,
     Callback = function(selectedDisplay)
         targetPlayerName = nameMap[selectedDisplay]
@@ -7643,7 +7643,7 @@ local playerDropdown = ESPTab:AddDropdown({
 local bodyParts = {"Humanoid", "Head", "Torso", "Left Arm", "Right Arm", "Left Leg", "Right Leg", "HumanoidRootPart"}
 
 local partDropdown = ESPTab:AddDropdown({
-    Name = "見る部位",
+    Name = "보는 부위(보지,자지×)",
     Options = bodyParts,
     Callback = function(selectedPart)
         targetPartName = selectedPart
@@ -7665,7 +7665,7 @@ Players.PlayerAdded:Connect(RefreshPlayerList)
 Players.PlayerRemoving:Connect(RefreshPlayerList)
 
 ESPTab:AddToggle({
-    Name = "プレイヤーの視点をみる",
+    Name = "염탐 하기",
     Default = false,
     Callback = function(value)
         if value and targetPlayerName then
@@ -7688,7 +7688,7 @@ local anchorGrabCoroutine = nil
 local toggleBringEnabled = true  
 local R_raaa = 10             
 
--- 指定された親の子孫かどうか判定
+-- 
 local function isDescendantOf(target, other)
     local currentParent = target.Parent
     while currentParent do
@@ -7862,7 +7862,7 @@ end
 
 
 objTab:AddToggle({
-    Name = "アンカー잡기",
+    Name = "앵커 그랩",
     Default = false,
     Callback = function(enabled)
         if enabled then
@@ -7877,7 +7877,7 @@ objTab:AddToggle({
 })
 
 objTab:AddButton({
-    Name = "アンカー解除",
+    Name = "행커 해제",
     Callback = function()
         cleanupAnchoredParts()
     end
@@ -7912,7 +7912,7 @@ end
 Players.PlayerAdded:Connect(RefreshPlayerList)
 Players.PlayerRemoving:Connect(RefreshPlayerList)
 playerDropdown = killTab:AddDropdown({
-    Name = "リスキルしたいプレイヤーを選ぶ",
+    Name = "루프킬하고 싶은 플레이어를 선택하세요.",
     Options = playerNames,
     Callback = function(Option)
         P.who = {}
@@ -7926,7 +7926,7 @@ playerDropdown = killTab:AddDropdown({
 
 
 killTab:AddToggle({
-    Name = "リスキル",
+    Name = "루프킬(장애인급 개쓰레기)",
     CurrentValue = false,
     Callback = function(Value)
         loopkill = Value
@@ -7948,7 +7948,7 @@ killTab:AddToggle({
 Players = game:GetService("Players")
 
 killTab:AddToggle({
-    Name = "キルオール",
+    Name = "킬 올",
     CurrentValue = false,
     Callback = function(Value)
         loopkill = Value
@@ -7969,7 +7969,7 @@ killTab:AddToggle({
 
 local Auraobj = 20
 AuraobjTab:AddToggle({
-    Name = "オブジェクト잡기오라",
+    Name = "객체잡기아우라",
     Default = false,
     Callback = function(enabled)
         if enabled then
@@ -8039,7 +8039,7 @@ AuraobjTab:AddToggle({
     end
 })
 AuraobjTab:AddToggle({
-    Name = "オブジェクト削除오라",
+    Name = "객체 삭제 아우라",
     Default = false,
     Callback = function(enabled)
         if enabled then
@@ -8222,9 +8222,9 @@ function ringEffect()
             local offsetPos
             if AuraConfig.rotationType == "세로" then
                 offsetPos = Vector3.new(radius * math.cos(angleRad), 0, radius * math.sin(angleRad))
-            elseif AuraConfig.rotationType == "横" then
+            elseif AuraConfig.rotationType == "가로" then
                 offsetPos = Vector3.new(0, radius * math.cos(angleRad), radius * math.sin(angleRad))
-            elseif AuraConfig.rotationType == "前" then
+            elseif AuraConfig.rotationType == "전" then
                 offsetPos = Vector3.new(radius * math.cos(angleRad), radius * math.sin(angleRad), 0)
             else
                 offsetPos = Vector3.new(radius * math.cos(angleRad), 0, radius * math.sin(angleRad))
@@ -8271,7 +8271,7 @@ function toggleEffect()
 end
 
 AuraobjTab:AddToggle({
-    Name = "リング",
+    Name = "링",
     Default = false,
     Callback = function(state)
         AuraConfig.isMoving = state
@@ -8280,8 +8280,8 @@ AuraobjTab:AddToggle({
 })
 
 AuraobjTab:AddDropdown({
-    Name = "回転方向",
-    Options = {"세로", "横", "前"},
+    Name = "회전 방향",
+    Options = {"세로", "가로", "전"},
     Default = "세로",
     Callback = function(selected)
         AuraConfig.rotationType = selected
@@ -8289,7 +8289,7 @@ AuraobjTab:AddDropdown({
 })
 
 AuraobjTab:AddSlider({
-    Name = "リングの範囲",
+    Name = "링의 범위",
     Min = 5,
     Max = 150,
     Default = 50,
@@ -8299,7 +8299,7 @@ AuraobjTab:AddSlider({
 })
 
 AuraobjTab:AddSlider({
-    Name = "リングの高さ",
+    Name = "링 높이",
     Min = 0,
     Max = 200,
     Default = 10,
@@ -8309,7 +8309,7 @@ AuraobjTab:AddSlider({
 })
 
 AuraobjTab:AddSlider({
-    Name = "回転スピード",
+    Name = "회전 속도",
     Min = 10,
     Max = 1000,
     Default = 10,
@@ -8386,7 +8386,7 @@ end
 RunService.Heartbeat:Connect(ch)
 
 arasuTab:AddToggle({
-    Name = "にがーおーる",
+    Name = "아 귀차나",
     Default = false,
     Save = true,
     Callback = function(enabled)
@@ -8517,7 +8517,7 @@ end
 RunService.Heartbeat:Connect(ch)
 
 arasuTab:AddToggle({
-    Name = "緑おーる",
+    Name = "초록 ",
     Default = false,
     Save = true,
     Callback = function(enabled)
